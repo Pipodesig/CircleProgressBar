@@ -4,12 +4,9 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.RotateAnimation;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,12 +17,11 @@ import android.widget.TextView;
 public class PipoCircleBar extends RelativeLayout  {
     private static final String PERCENT = "%";
     private final LayoutInflater mInflater;
-    ProgressBar progressBar;
-    ProgressBar point;
-    TextView percentText;
+    private ProgressBar progressBar;
+    private ProgressBar point;
+    private TextView percentText;
     private int pointSize = 8;
     private int prg = 0;
-
 
     public PipoCircleBar(Context context) {
         super(context);
@@ -43,10 +39,12 @@ public class PipoCircleBar extends RelativeLayout  {
         super(context, attrs, defStyle);
         mInflater = LayoutInflater.from(context);
         init();
+
     }
 
     public void init() {
         mInflater.inflate(R.layout.pipo_circle, this, true);
+
         progressBar = (ProgressBar) findViewById(R.id.progressBarInvisible);
         point = (ProgressBar) findViewById(R.id.progressBarPoint);
         percentText = (TextView)findViewById(R.id.percent);
